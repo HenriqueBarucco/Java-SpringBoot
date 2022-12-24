@@ -1,9 +1,6 @@
 package com.henriquebarucco.javaspringbootalura.controller;
 
-import com.henriquebarucco.javaspringbootalura.paciente.DadosCadastroPaciente;
-import com.henriquebarucco.javaspringbootalura.paciente.DadosListagemPaciente;
-import com.henriquebarucco.javaspringbootalura.paciente.Paciente;
-import com.henriquebarucco.javaspringbootalura.paciente.PacienteRepository;
+import com.henriquebarucco.javaspringbootalura.paciente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,6 +24,20 @@ public class PacienteController {
 
     @GetMapping
     public Page<DadosListagemPaciente> listar(@PageableDefault(page = 0, size = 10, sort = {"nome"}) Pageable paginacao) {
-        return repository.findAll(paginacao).map(DadosListagemPaciente::new);
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemPaciente::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoPaciente dados) {
+        var paciente = repository.getReferenceById(dados.id());
+        paciente.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void remover(@PathVariable Long id) {
+        var paciente = repository.getReferenceById(id);
+        paciente.inativar();
     }
 }
