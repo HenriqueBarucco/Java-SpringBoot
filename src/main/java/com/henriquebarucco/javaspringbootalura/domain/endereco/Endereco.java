@@ -1,4 +1,4 @@
-package com.henriquebarucco.javaspringbootalura.endereco;
+package com.henriquebarucco.javaspringbootalura.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

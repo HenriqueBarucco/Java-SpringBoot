@@ -1,6 +1,6 @@
 package com.henriquebarucco.javaspringbootalura.controller;
 
-import com.henriquebarucco.javaspringbootalura.paciente.*;
+import com.henriquebarucco.javaspringbootalura.domain.paciente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

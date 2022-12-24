@@ -1,4 +1,4 @@
-package com.henriquebarucco.javaspringbootalura.endereco;
+package com.henriquebarucco.javaspringbootalura.domain.endereco;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

@@ -1,6 +1,6 @@
-package com.henriquebarucco.javaspringbootalura.medico;
+package com.henriquebarucco.javaspringbootalura.domain.medico;
 
-import com.henriquebarucco.javaspringbootalura.endereco.Endereco;
+import com.henriquebarucco.javaspringbootalura.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.*;
 

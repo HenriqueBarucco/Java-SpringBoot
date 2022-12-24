@@ -1,6 +1,6 @@
-package com.henriquebarucco.javaspringbootalura.paciente;
+package com.henriquebarucco.javaspringbootalura.domain.paciente;
 
-import com.henriquebarucco.javaspringbootalura.endereco.Endereco;
+import com.henriquebarucco.javaspringbootalura.domain.endereco.Endereco;
 
 public record DadosDetalhamentoPaciente(
         Long id,

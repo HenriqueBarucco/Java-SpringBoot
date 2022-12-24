@@ -1,4 +1,4 @@
-package com.henriquebarucco.javaspringbootalura.medico;
+package com.henriquebarucco.javaspringbootalura.domain.medico;
 
 public enum Especialidade {
     ORTOPEDIA,

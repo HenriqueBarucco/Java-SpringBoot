@@ -1,6 +1,6 @@
-package com.henriquebarucco.javaspringbootalura.medico;
+package com.henriquebarucco.javaspringbootalura.domain.medico;
 
-import com.henriquebarucco.javaspringbootalura.endereco.DadosEndereco;
+import com.henriquebarucco.javaspringbootalura.domain.endereco.DadosEndereco;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizarMedico(
