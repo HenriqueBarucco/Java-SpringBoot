@@ -1,4 +1,4 @@
-package com.henriquebarucco.javaspringbootalura.infra;
+package com.henriquebarucco.javaspringbootalura.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
