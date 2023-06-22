@@ -1,4 +1,4 @@
-package com.henriquebarucco.javaspringbootalura.domain.consulta.validacoes;
+package com.henriquebarucco.javaspringbootalura.domain.consulta.validacoes.agendamento;
 
 import com.henriquebarucco.javaspringbootalura.domain.ValidacaoException;
 import com.henriquebarucco.javaspringbootalura.domain.consulta.DadosAgendamentoConsulta;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-@Component
+@Component("ValidadorHorarioAntecedenciaAgendamento")
 public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoDeConsultas {
 
     public void validar(DadosAgendamentoConsulta dados) {

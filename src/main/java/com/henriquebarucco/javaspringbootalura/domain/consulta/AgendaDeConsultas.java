@@ -1,7 +1,8 @@
 package com.henriquebarucco.javaspringbootalura.domain.consulta;
 
 import com.henriquebarucco.javaspringbootalura.domain.ValidacaoException;
-import com.henriquebarucco.javaspringbootalura.domain.consulta.validacoes.ValidadorAgendamentoDeConsultas;
+import com.henriquebarucco.javaspringbootalura.domain.consulta.validacoes.agendamento.ValidadorAgendamentoDeConsultas;
+import com.henriquebarucco.javaspringbootalura.domain.consulta.validacoes.cancelamento.ValidadorCancelamentoDeConsulta;
 import com.henriquebarucco.javaspringbootalura.domain.medico.Medico;
 import com.henriquebarucco.javaspringbootalura.domain.medico.MedicoRepository;
 import com.henriquebarucco.javaspringbootalura.domain.paciente.PacienteRepository;
@@ -24,6 +25,9 @@ public class AgendaDeConsultas {
 
     @Autowired
     private List<ValidadorAgendamentoDeConsultas> validadores;
+
+    @Autowired
+    private List<ValidadorCancelamentoDeConsulta> validadoresCancelamento;
 
     public DadosDetalhamentoConsulta agendar(DadosAgendamentoConsulta dados) {
         if (!pacienteRepository.existsById(dados.idPaciente())) {
@@ -65,6 +69,8 @@ public class AgendaDeConsultas {
         if (!consultaRepository.existsById(dados.idConsulta())) {
             throw new ValidacaoException("Id da consulta informado não existe!");
         }
+
+        validadoresCancelamento.forEach(v -> v.validar(dados));
 
         var consulta = consultaRepository.getReferenceById(dados.idConsulta());
         consulta.cancelar(dados.motivo());

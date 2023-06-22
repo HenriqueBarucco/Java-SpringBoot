@@ -1,4 +1,4 @@
-package com.henriquebarucco.javaspringbootalura.domain.consulta.validacoes;
+package com.henriquebarucco.javaspringbootalura.domain.consulta.validacoes.agendamento;
 
 import com.henriquebarucco.javaspringbootalura.domain.ValidacaoException;
 import com.henriquebarucco.javaspringbootalura.domain.consulta.ConsultaRepository;
