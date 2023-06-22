@@ -11,6 +11,14 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Page<Medico> findAllByAtivoTrue(Pageable paginacao);
 
     @Query("""
+            select m.ativo
+            from Medico m
+            where
+            m.id = :id
+            """)
+    Boolean findAtivoById(Long id);
+
+    @Query("""
             select m from Medico m
             where
             m.ativo = 1
